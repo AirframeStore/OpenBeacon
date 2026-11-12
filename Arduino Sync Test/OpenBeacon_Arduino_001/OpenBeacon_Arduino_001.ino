@@ -41,7 +41,7 @@ void loop() {
     return;
   }
   //Beacon
-  //bool on = (t < 1000);
+  //bool on = (t < 750);
   //ACL
   bool on = (t < 50) || (t > 150 && t < 200) || (t > 1500 && t < 1550) || (t > 1650 && t < 1700);
   //WigWag_left
