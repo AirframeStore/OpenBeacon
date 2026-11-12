@@ -1,3 +1,5 @@
+![OpenBeacon logo](/logo/openBeacon_airframe_banner.png)
+
 # OpenBeacon
 An open source synchronized beacon light for experimental aircraft.
 
