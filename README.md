@@ -7,11 +7,32 @@ An open source synchronized beacon light for experimental aircraft.
 The goal is to develop an open source beacon light pcb that can be used wherever no "Form 1" is needed to exchange costly COTS components with self-made hardware.
 
 # Modularity
-OpenBeacon aims to me modular, so that users can choose between a light and low beacon that can be stacked higher if more vibisi... visi...vibilisity.... if more light is desired.
+Some OpenBeacon Devices like the OB3k are modular, so that users can choose either a light and low profile beacon or a stacked version of two or more OB3k PCBs if more visibility is desired. The entire system of blinking lights is also modular, lights can be added or removed and the rest will keep blinking in sync. This also applies to devices removed (or destroyed?) during runtime.
 
 # Synchronized
-OpenBeacon uses an open-collector Sync-Bus were all participants are equals. Everytime a bus participant finishes its blink pattern it pulls the sync bus low to reset all blink patterns. In theory all OpenBeacon frames last three seconds but unnoticeably tiny differences in timing within the participants cause one device to trigger a sync first. That way, no matter how many devices are connected to the bus, they will all synchronize once each cycle.
+OpenBeacon uses an open-collector Sync-Bus were all participants are equals. Everytime a bus participant finishes its blink pattern it pulls the sync bus low to send a sync pulse to all bus members. With all devices counting a tiiiiny bit differently, the fastest member to reach the end of its blink frame sends the pulse. If the fastest member is removed from the bus, the second fastest takes its job.
 
+
+
+## OpenBeacon Frame
+The OpenBeacon blinking patterns are programmed so that they all fit within one (or a whole-numbered fraction of one) OpenBeacon Frame that is 3000 ms long. When powered up, each device will start blinking in its uniquely programmed pattern that repeats every 3000 ms. When a sync pulse appears on the sync bus, the pattern restarts.
+
+### Standard Patterns
+Standard Patterns include:  
+Beacon: 1000ms on, 2000ms off
+ACL: 50ms on, 100ms off, 50ms on, 1300ms off (x2)
+WigWag: 1500ms on, 1500ms off (or vice versa for the wigwag partner light)
+
+### Custom Patterns
+programming TBD
+
+## Open-Collector Sync-Line
+After the Frame is completed, the device will pull the sync bus low for a short while (duration tbd) causing all devices that are listening on the bus to restart their frame. Since the bus is an open-collector bus, all devices can equally pull the bus low, without damaging one another. 
+
+# Devices
+## Beacon OB3k
+![OB3k](/images/OB3kv01_261112.png)  
+The OpenBeacon 3k is a cylindrical stackable low profile Beacon light. The PCB has 20 powerful red [Side View LEDs by Würth Elektronik](https://www.we-online.com/de/components/products/led/leds/color_led/chip_led_side_view),  10 on the top layer spaced 36° appart and 10 on the bottom layer spaced 18° from the top LEDs. 
 ## Programmable Blink Cycles
 The following are recommendations but with OpenBeacon, individual blink patterns can be programmed into each device.
 ### Anti Collision Lights (ACL)
