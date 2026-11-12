@@ -1,7 +1,16 @@
 ![OpenBeacon logo](/logo/openBeacon_narrowHQ.png)
 
-# OpenBeacon
-An open source synchronized beacon light for experimental aircraft by [Airframe.Store](https://www.airframe.store).
+# OpenBeacon Project
+An open source synchronized beacon light for experimental aircraft by [Airframe.Store](https://www.airframe.store)
+
+# Open Source Data and Sale
+Everything needed to build an OpenBeacon Device will be made publicly available at no cost: PCB Schematics and Layouts, Source Code, BOMs, 3d Models, drawings for manufacturing and build manuals.  
+Not everybody has access to a personal PCB making machine, so the plan is to sell partial or full kits at the [Airframe Online Store](https://www.airframe.store).  
+There will most likely be several comleteness levels of kits available in the future:  
+- Plans only (as mentionned above) at no cost
+- Bare PCB (components must be ordered seperatly and soldered on, programming by the user) at little cost
+- PCB + components (must still be soldered and programmed by the user) at a little higher cost
+- Fully assembled and programmed PCB at even more cost
 
 # Motivation
 The goal is to develop an open source beacon light pcb that can be used wherever no "Form 1" is needed to exchange costly COTS components with self-made hardware.
