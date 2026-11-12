@@ -10,7 +10,8 @@ The goal is to develop an open source beacon light pcb that can be used wherever
 Some OpenBeacon Devices like the OB3k are modular, so that users can choose either a light and low profile beacon or a stacked version of two or more OB3k PCBs if more visibility is desired. The entire system of blinking lights is also modular, lights can be added or removed and the rest will keep blinking in sync. This also applies to devices removed (or destroyed?) during runtime.
 
 # Synchronized
-OpenBeacon uses an open-collector Sync-Bus were all participants are equals. Everytime a bus participant finishes its blink pattern it pulls the sync bus low to send a sync pulse to all bus members. With all devices counting a tiiiiny bit differently, the fastest member to reach the end of its blink frame sends the pulse. If the fastest member is removed from the bus, the second fastest takes its job.
+There's nothing aesthetically worse than anti-collision lights and beacons flashing all over the place on an aircraft.  
+OpenBeacon share a masterless automatic sync-bus, so that all lights flash beautifully in sync. This function is implemented into all devices and works no matter how many OpenBeacon devices are connected, even if devices are connected or disconnected during runtime.
 
 ## OpenBeacon Frame
 The OpenBeacon blinking patterns are programmed so that they all fit within one (or a whole-numbered fraction of one) OpenBeacon Frame that is 3000 ms long. When powered up, each device will start blinking in its uniquely programmed pattern that repeats every 3000 ms. When a sync pulse appears on the sync bus, the pattern restarts.
@@ -25,7 +26,8 @@ WigWag: 1500ms on, 1500ms off (or vice versa for the wigwag partner light)
 programming TBD
 
 ## Open-Collector Sync-Line
-After the Frame is completed, the device will pull the sync bus low for 2 ms causing all devices that are listening on the bus to restart their frame. Since the bus is an open-collector bus, all devices can equally pull the bus low, without damaging one another. Also, since all bus participants evaluate if the bus is already low before pulling low, simultaneous low-pulling is unlikely.
+OpenBeacon uses an open-collector Sync-Bus were all participants are equals. Everytime a bus participant finishes its blink pattern it pulls the sync bus low to send a sync pulse to all bus members. With all devices counting a tiiiiny bit differently, the fastest member to reach the end of its blink frame sends the pulse. If the fastest member is removed from the bus, the second fastest takes its job:  
+After a Frame is completed, the device will pull the sync bus low for 2 ms causing all devices that are listening on the bus to restart their frame. Since the bus is an open-collector bus, all devices can equally pull the bus low, without damaging one another. Also, since all bus participants evaluate if the bus is already low before pulling low, simultaneous low-pulling is unlikely.
 
 # Devices
 ## Beacon OB3k
