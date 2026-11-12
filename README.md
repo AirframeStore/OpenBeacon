@@ -1,7 +1,7 @@
 ![OpenBeacon logo](/logo/openBeacon_narrowHQ.png)
 
 # OpenBeacon
-An open source synchronized beacon light for experimental aircraft.
+An open source synchronized beacon light for experimental aircraft by [Airframe.Store](www.airframe.store).
 
 # Motivation
 The goal is to develop an open source beacon light pcb that can be used wherever no "Form 1" is needed to exchange costly COTS components with self-made hardware.
