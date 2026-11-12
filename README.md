@@ -17,9 +17,9 @@ The OpenBeacon blinking patterns are programmed so that they all fit within one 
 
 ### Standard Patterns
 Standard Patterns include:  
-Beacon: 1000ms on, 2000ms off
-ACL: 50ms on, 100ms off, 50ms on, 1300ms off (x2)
-WigWag: 1500ms on, 1500ms off (or vice versa for the wigwag partner light)
+Beacon: 1000ms on, 2000ms off  
+ACL: 50ms on, 100ms off, 50ms on, 1300ms off (x2)  
+WigWag: 1500ms on, 1500ms off (or vice versa for the wigwag partner light)  
 
 ### Custom Patterns
 programming TBD
