@@ -552,7 +552,7 @@
     "last_paths": {
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "gerber_output/",
       "specctra_dsn": "",
       "step": "",
       "vrml": ""
@@ -689,7 +689,7 @@
         "uuid": "14f1b801-e808-4cb2-9cba-e51b5a67b1c1"
       }
     ],
-    "used_designators": "U1-3,D1-20,#PWR1-22,C1-4,R1-4,U_fast1,RV1,Q1-4,Rg1,J1-3,Rd1,H1-4",
+    "used_designators": "U1-3,D1-20,#PWR1-22,C1-4,R1-4,U_fast1,RV1,Q1-4,Rg1,J1-3,Rd1,H1-4,Dpwr1",
     "variants": []
   },
   "sheets": [
