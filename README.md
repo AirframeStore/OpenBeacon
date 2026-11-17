@@ -34,7 +34,7 @@ WigWag: 1500 ms on, 1500 ms off (or vice versa for the wigwag partner light)
 programming TBD
 
 ### Open-Collector Sync-Line
-OpenBeacon uses an open-collector Sync-Bus were all participants are equals. Everytime a bus participant finishes its blink pattern it pulls the sync bus low to send a sync pulse to all bus members. With all devices counting a tiiiiny bit differently, the fastest member to reach the end of its blink frame sends the pulse. If the fastest member is removed from the bus, the second fastest takes its job:  
+OpenBeacon uses an open-collector Sync-Bus where all participants are equals. Everytime a bus participant finishes its blink pattern it pulls the sync bus low to send a sync pulse to all bus members. With all devices counting a tiiiiny bit differently, the fastest member to reach the end of its blink frame sends the pulse. If the fastest member is removed from the bus, the second fastest takes its job:  
 After a Frame is completed, the device will pull the sync bus low for 2 ms causing all devices that are listening on the bus to restart their frame. Since the bus is an open-collector bus, all devices can equally pull the bus low, without damaging one another. Also, since all bus participants evaluate if the bus is already low before pulling low, simultaneous low-pulling is unlikely.
 
 ## Devices
